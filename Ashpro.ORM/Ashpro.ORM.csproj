@@ -7,6 +7,11 @@
     <Company>Ashpro</Company>
     <Description>This is a Micro ORM library which can use against SQL Server,
 MySQL and SQLite Databases</Description>
+    <PackageProjectUrl>https://github.com/Ashpro2013/Ashpro.ORM.git</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Ashpro2013/Ashpro.ORM.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>ORM,Micro ORM, SQL Server ORM, SQLite ORM, MySQL ORM, Library</PackageTags>
+    <PackageReleaseNotes>This is ORM library created as a wrapper class upon ado.net. This is suitable for SQL Server, MySQL and SQLite databases</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
