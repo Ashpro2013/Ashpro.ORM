@@ -1573,7 +1573,19 @@ namespace Ashpro.ORM
                             cmd.Parameters.AddWithValue(item.Name, (byte[])(item.GetValue(entity, null)));
                             break;
                         case "DateTime":
-                            cmd.Parameters.AddWithValue("@" + item.Name, GetDate((DateTime)(item.GetValue(entity, null))));
+                            var val = GetDate((DateTime)(item.GetValue(entity, null)));
+                            cmd.Parameters.AddWithValue("@" + item.Name, val);
+                            break;
+                        case "Nullable`1":
+                            if (item.PropertyType.FullName.Contains("System.DateTime"))
+                            {
+                                val = GetDate((DateTime)(item.GetValue(entity, null)));
+                                cmd.Parameters.AddWithValue("@" + item.Name, val);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue(item.Name, item.GetValue(entity, null).ToString());
+                            }
                             break;
                         default:
                             cmd.Parameters.AddWithValue(item.Name, item.GetValue(entity, null).ToString());
